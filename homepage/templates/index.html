@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+        .text-box h1 {
+            font-family: 'Staatliches', cursive;
+        }
+        .text-box h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+
+    <title>Bugeun의 블로그</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+
+<!-- 메인 인덱스 -->
+<div class="text-box">
+    <div class="text-wrap">
+        <div class="heart"></div>
+            <br>
+            <h4> 안녕하세요 부근의 홈페이지입니다.</h4>
+            <br>
+            <br> 
+            
+            {% if g.user %}
+            <h5> 안녕하세요 {{g.user.username}} 님.</h5>
+
+            <br>
+        
+            <form action="http://127.0.0.1:5000/question/list/" method="get">
+        
+                <button type="/list" class="btn btn-primary">질문리스트</button>
+        
+            </form>
+            {% else %}
+            <h3> 로그인을 해주세요. </h3>
+            {% endif %}
+    
+        
+
+    </div>
+  
+   </div> 
+    
+   {% endblock %}
+</body>
+</html>
+
