@@ -17,7 +17,8 @@ def signup():
         if not user:
             user = User(username=form.username.data,
                         password=generate_password_hash(form.password1.data),
-                        email=form.email.data)
+                        email=form.email.data, pnumber=form.pnumber.data, Hadress=form.Hadress.data,
+                        pcode=form.pcode.data, Cadress=form.Cadress.data, Clitype=form.Clitype.data,Ncode=form.Ncode.data)
             db.session.add(user)
             db.session.commit()
             return redirect(url_for('main.index'))

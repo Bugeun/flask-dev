@@ -33,4 +33,9 @@ class User(db.Model):
     username = db.Column(db.String(150), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
     email = db.Column(db.String(150), unique=True, nullable=False)
-
+    pnumber = db.Column(db.String(150), unique=True, nullable=True) 
+    Hadress = db.Column(db.String(300), nullable=True)
+    pcode = db.Column(db.String(150), nullable=True)
+    Cadress = db.Column(db.String(200), nullable=True)
+    Clitype = db.Column(db.String(20), nullable=True)
+    Ncode = db.Column(db.String(50), nullable=True)

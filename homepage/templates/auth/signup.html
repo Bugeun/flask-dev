@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <h3 class="mb-3">"정치 선동, 댓글 알바의 목적으로 오는 분들은 가입이 불가능합니다. ex: 장민건,syasya"</h3>
+    
     <br>
     <h5 class="my-3 border-bottom pb-2">계정생성</h5>
     
@@ -28,7 +28,38 @@
             <input type="text" class="form-control" name="email" id="email"
                    value="{{ form.email.data or '' }}">
         </div>
+        
+        <div class="mb-3">
+            <label for="pnumber">휴대폰번호</label>
+            <input type="text" class="form-control" name="pnumber" id="pnumber"
+                   value="{{ form.pnumber.data or '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="Hadress">집주소</label>
+            <input type="text" class="form-control" name="Hadress" id="Hadress"
+                   value="{{ form.Hadress.data or '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="pcode">우편번호</label>
+            <input type="text" class="form-control" name="pcode" id="pcode"
+                   value="{{ form.pcode.data or '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="Cadress">회사주소</label>
+            <input type="text" class="form-control" name="Cadress" id="Cadress"
+                   value="{{ form.Cadress.data or '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="Clitype">고객타입</label>
+            {{ form.Clitype(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            <label for="Ncode">국가</label>
+            <input type="text" class="form-control" name="Ncode" id="Ncode"
+                   value="{{ form.Ncode.data or '' }}">
+        </div>
         <button type="submit" class="btn btn-primary">생성하기</button>
+
     </form>
 </div>
 {% endblock %}
